@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Christopher Goodwin | IT Technical Support Specialist</title>
+  <meta name="description" content="Christopher Goodwin - IT Technical Support Specialist focused on Tier 2 support, identity and access management, PowerShell automation, Microsoft 365, Entra ID, VDI, VMware, VirtualBox, and systems support." />
+
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --paper: #ffffff;
+      --text: #162033;
+      --muted: #5e6a7d;
+      --soft: #eef2f7;
+      --line: #d9e1ec;
+      --accent: #1d4ed8;
+      --accent-soft: #eef4ff;
+      --accent-text: #173f91;
+      --card: #fbfcff;
+      --shadow: 0 14px 32px rgba(15, 23, 42, 0.06);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.55;
+      font-size: 16px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 650;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .shell {
+      width: min(1120px, calc(100% - 32px));
+      margin: 28px auto;
+    }
+
+    .resume {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    header {
+      padding: 38px 46px 26px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+
+    .topline {
+      color: var(--accent-text);
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      font-size: 0.76rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.15rem, 5vw, 3.45rem);
+      line-height: 1;
+      letter-spacing: -0.052em;
+      color: var(--text);
+    }
+
+    .title {
+      margin-top: 11px;
+      color: #344156;
+      font-size: 1.05rem;
+      font-weight: 720;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .contact span { white-space: nowrap; }
+
+    .nav-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #344156;
+      background: var(--soft);
+      border: 1px solid transparent;
+      font-size: 0.86rem;
+      font-weight: 750;
+    }
+
+    nav a:hover {
+      text-decoration: none;
+      border-color: var(--line);
+      background: #fff;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      border-radius: 999px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .button:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 315px;
+      gap: 34px;
+      padding: 34px 46px 46px;
+    }
+
+    section {
+      margin-bottom: 31px;
+      scroll-margin-top: 20px;
+    }
+
+    section:last-child { margin-bottom: 0; }
+
+    h2 {
+      margin: 0 0 14px;
+      padding-bottom: 8px;
+      color: var(--accent-text);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      font-weight: 850;
+    }
+
+    h3 {
+      margin: 0;
+      color: var(--text);
+      font-size: 1.05rem;
+      letter-spacing: -0.015em;
+    }
+
+    p { margin: 0; }
+
+    .summary {
+      color: #273348;
+      font-size: 1.01rem;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 11px;
+      margin-top: 18px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 15px;
+      background: var(--card);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--accent-text);
+      font-size: 1.34rem;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    .job {
+      padding-bottom: 22px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #edf1f7;
+    }
+
+    .job:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .company {
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 720;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 0.89rem;
+      white-space: nowrap;
+      font-weight: 720;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 1.12rem;
+    }
+
+    li {
+      margin: 6px 0;
+      color: #2b364a;
+    }
+
+    li::marker { color: var(--accent); }
+
+    .project {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 16px;
+      padding: 15px;
+      margin-bottom: 12px;
+    }
+
+    .project p {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.91rem;
+      font-weight: 600;
+    }
+
+    .project ul { margin-top: 8px; }
+
+    aside { min-width: 0; }
+
+    .side-card {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 17px;
+      margin-bottom: 17px;
+    }
+
+    .side-card h2 { margin-bottom: 12px; }
+
+    .skill-group { margin-bottom: 13px; }
+    .skill-group:last-child { margin-bottom: 0; }
+
+    .skill-title {
+      margin-bottom: 6px;
+      color: #1e293b;
+      font-size: 0.84rem;
+      font-weight: 850;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #dbe7ff;
+      background: var(--accent-soft);
+      color: #244a86;
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 0.76rem;
+      font-weight: 740;
+      line-height: 1.25;
+    }
+
+    .compact-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .compact-list li {
+      margin: 9px 0;
+      color: #2b364a;
+      line-height: 1.42;
+    }
+
+    .compact-list li::marker { content: ""; }
+
+    .callout {
+      border-left: 4px solid var(--accent);
+      padding: 10px 12px;
+      background: var(--accent-soft);
+      border-radius: 12px;
+      color: #244a86;
+      font-size: 0.92rem;
+      font-weight: 650;
+    }
+
+    footer {
+      padding: 22px 46px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.86rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      background: #fbfdff;
+    }
+
+    @media (max-width: 900px) {
+      .shell {
+        width: min(100% - 22px, 1120px);
+        margin: 14px auto;
+      }
+
+      header { padding: 30px 22px 22px; }
+
+      main {
+        grid-template-columns: 1fr;
+        padding: 28px 22px 34px;
+      }
+
+      .nav-actions { align-items: flex-start; }
+      .metrics { grid-template-columns: 1fr; }
+      .job-head { display: block; }
+
+      .date {
+        display: block;
+        margin-top: 2px;
+      }
+
+      footer { padding: 20px 22px; }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        font-size: 12px;
+      }
+
+      .shell {
+        width: 100%;
+        margin: 0;
+      }
+
+      .resume {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      header, main, footer {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .nav-actions, footer { display: none; }
+
+      main {
+        grid-template-columns: 1fr 250px;
+        gap: 22px;
+      }
+
+      h1 { font-size: 34px; }
+
+      section { margin-bottom: 20px; }
+
+      .job, .project, .side-card, .metric { break-inside: avoid; }
+
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shell">
+    <div class="resume">
+      <header>
+        <div class="topline">IT Technical Support Specialist</div>
+        <h1>Christopher Goodwin</h1>
+        <div class="title">Tier 2 Support | Identity & Access Management | PowerShell Automation | Systems Administration Track</div>
+
+        <div class="contact" aria-label="Contact information">
+          <span>Cibolo, TX</span>
+          <span><a href="tel:+18482389257">(848) 238-9257</a></span>
+          <span><a href="mailto:goodwin.chris2025@gmail.com">goodwin.chris2025@gmail.com</a></span>
+          <span><a href="https://www.linkedin.com/in/christopher-goodwin-198baa3bb/" target="_blank" rel="noopener">LinkedIn</a></span>
+          <span><a href="https://github.com/goodwin-chris/" target="_blank" rel="noopener">GitHub</a></span>
+        </div>
+
+        <div class="nav-actions">
+          <nav aria-label="Resume navigation">
+            <a href="#summary">Summary</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#certifications">Certifications</a>
+          </nav>
+
+          <div class="actions">
+            <a class="button primary" href="mailto:goodwin.chris2025@gmail.com">Contact</a>
+            <a class="button" href="Christopher_Goodwin_Resume.docx" download>Download Resume</a>
+            <a class="button" href="https://github.com/goodwin-chris/" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="main-column">
+          <section id="summary">
+            <h2>Professional Summary</h2>
+            <p class="summary">
+              IT Technical Support Specialist supporting enterprise environments across Active Directory, Entra ID, Microsoft 365,
+              VDI, VPN, endpoint support, and virtualization lab environments. Provide Tier 1/Tier 2 support for 1000+ users in a
+              high-volume, multi-client environment while maintaining 90%+ First Call Resolution. Strong focus on identity and
+              access management, systems troubleshooting, PowerShell automation, onboarding workflows, and operational documentation.
+              Seeking advancement into a Tier 2, Systems Support, or junior Systems Administrator role with increased ownership of
+              identity, endpoint, and infrastructure support.
+            </p>
+
+            <div class="metrics" aria-label="Resume highlights">
+              <div class="metric">
+                <strong>1000+</strong>
+                <span>users supported across enterprise environments</span>
+              </div>
+              <div class="metric">
+                <strong>20-40+</strong>
+                <span>tickets resolved daily in high-volume support</span>
+              </div>
+              <div class="metric">
+                <strong>50%</strong>
+                <span>password reset ticket reduction in 3 months</span>
+              </div>
+            </div>
+          </section>
+
+          <section id="experience">
+            <h2>Professional Experience</h2>
+
+            <article class="job">
+              <div class="job-head">
+                <div>
+                  <h3>Technical Support Specialist</h3>
+                  <div class="company">Salelytics — San Antonio, TX</div>
+                </div>
+                <div class="date">Mar. 2025 - Present</div>
+              </div>
+              <ul>
+                <li>Provide Tier 1/Tier 2 support for approximately 1000+ users across multi-client enterprise environments, resolving account, VDI, VPN, network, endpoint, and application issues.</li>
+                <li>Handle 20-40+ tickets per day while maintaining 90%+ First Call Resolution and clear, user-focused communication.</li>
+                <li>Administer identity and access workflows in Active Directory and Entra ID, including user provisioning, account unlocks, access changes, password resets, MFA troubleshooting, and group membership updates.</li>
+                <li>Troubleshoot VDI and remote access environments, including Windows App virtual desktop access, GlobalProtect VPN connectivity, login issues, profile-related issues, and network access problems.</li>
+                <li>Use ConnectWise Manage, ConnectWise Automate, and ScreenConnect for ticket management, automation, endpoint visibility, and remote support.</li>
+                <li>Develop PowerShell automation to streamline repetitive identity and access tasks, reduce manual workload, and improve operational consistency.</li>
+                <li>Created an Active Directory dashboard utility that displays key user account data including account status, locked-out status, enabled state, password expiration, password last set, bad password attempts, and last bad password attempt.</li>
+                <li>Built an AD group membership automation tool for bulk user add/remove workflows, reducing group update tasks from hours to minutes.</li>
+                <li>Reduced password reset ticket volume by 50% in 3 months by developing a PowerShell automation and HTML email notification workflow for soon-to-expire passwords.</li>
+                <li>Developed an internal API-based user ID generation script for new hires, producing import-ready CSV output for faster provisioning.</li>
+                <li>Created standardized onboarding documentation covering equipment setup, MFA, and common support workflows to reduce repeat issues and improve consistency.</li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <div class="job-head">
+                <div>
+                  <h3>Desktop Support Technician</h3>
+                  <div class="company">WorldWide Tech Services — San Antonio, TX</div>
+                </div>
+                <div class="date">Feb. 2025 - Mar. 2025</div>
+              </div>
+              <ul>
+                <li>Diagnosed hardware and software issues across enterprise laptops, desktops, monitors, peripherals, and supported devices.</li>
+                <li>Performed system upgrades, device repair, workstation setup, and endpoint troubleshooting.</li>
+                <li>Applied Dell and Lenovo repair knowledge to support warranty-related hardware service and replacement workflows.</li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <div class="job-head">
+                <div>
+                  <h3>Volunteer IT Technician</h3>
+                  <div class="company">Revolution Church — Selma, TX</div>
+                </div>
+                <div class="date">Oct. 2024 - Jan. 2026</div>
+              </div>
+              <ul>
+                <li>Set up remote desktop and VPN solutions to support staff access and remote administration needs.</li>
+                <li>Installed and managed network equipment, server rack equipment, structured cabling, and network-connected devices.</li>
+                <li>Troubleshot connectivity, hardware, software, projector, and AV production issues in a live church environment.</li>
+                <li>Supported Mac and Apple-based systems used in production and creative workflows.</li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <div class="job-head">
+                <div>
+                  <h3>Network / Low Voltage Technician</h3>
+                  <div class="company">Gold Protective Systems — Freehold, NJ</div>
+                </div>
+                <div class="date">Feb. 2017 - Mar. 2019</div>
+              </div>
+              <ul>
+                <li>Installed and configured CCTV, access control, low-voltage cabling, and network-connected security systems.</li>
+                <li>Troubleshot connectivity issues, configured networking devices, and supported field deployment of security infrastructure.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section id="projects">
+            <h2>Selected Automation & Systems Projects</h2>
+
+            <article class="project">
+              <h3>Active Directory Dashboard & Account Utility</h3>
+              <p>PowerShell 5.1 • Active Directory • Identity Support</p>
+              <ul>
+                <li>Built a PowerShell tool to retrieve and display user account data for faster support triage.</li>
+                <li>Included workflows for account unlocks, password reset support, and improved user selection.</li>
+              </ul>
+            </article>
+
+            <article class="project">
+              <h3>Password Expiration Notification Automation</h3>
+              <p>PowerShell • HTML Email • Active Directory</p>
+              <ul>
+                <li>Automated proactive notifications for users with soon-to-expire passwords at 7, 4, and 1 day intervals.</li>
+                <li>Reduced password reset-related ticket volume by 50% within 3 months.</li>
+              </ul>
+            </article>
+
+            <article class="project">
+              <h3>AD Group Management Automation</h3>
+              <p>PowerShell • Bulk User Administration • Access Management</p>
+              <ul>
+                <li>Created a bulk add/remove workflow for AD group membership updates.</li>
+                <li>Reduced repetitive access administration from hours of manual work to minutes.</li>
+              </ul>
+            </article>
+
+            <article class="project">
+              <h3>New Hire User ID Generation Workflow</h3>
+              <p>PowerShell • Internal API • CSV Output • Provisioning Support</p>
+              <ul>
+                <li>Developed an API-integrated script to generate user IDs for new hires.</li>
+                <li>Produced import-ready CSV output to streamline onboarding and database import workflows.</li>
+              </ul>
+            </article>
+
+            <article class="project">
+              <h3>Home Lab Virtualization Environment</h3>
+              <p>VMware • VirtualBox • Windows Server • Active Directory • Networking</p>
+              <ul>
+                <li>Built and managed virtual lab environments using VMware and VirtualBox to practice systems administration and network troubleshooting.</li>
+                <li>Configured Windows Server instances for Active Directory, user/group management, and basic domain administration testing.</li>
+                <li>Simulated enterprise support scenarios including account provisioning, group policy, network connectivity issues, and endpoint troubleshooting.</li>
+              </ul>
+            </article>
+          </section>
+        </div>
+
+        <aside>
+          <section class="side-card" id="skills">
+            <h2>Technical Skills</h2>
+
+            <div class="skill-group">
+              <div class="skill-title">Identity & Access</div>
+              <div class="chips">
+                <span class="chip">Active Directory</span>
+                <span class="chip">Entra ID</span>
+                <span class="chip">Azure AD</span>
+                <span class="chip">Group Policy</span>
+                <span class="chip">MFA</span>
+                <span class="chip">Access Control</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <div class="skill-title">Systems & Endpoint</div>
+              <div class="chips">
+                <span class="chip">Windows 10/11</span>
+                <span class="chip">Windows Server</span>
+                <span class="chip">macOS</span>
+                <span class="chip">Linux</span>
+                <span class="chip">Hardware Repair</span>
+                <span class="chip">Endpoint Support</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <div class="skill-title">Cloud & MDM</div>
+              <div class="chips">
+                <span class="chip">Microsoft 365</span>
+                <span class="chip">Intune</span>
+                <span class="chip">Exchange Admin</span>
+                <span class="chip">Teams</span>
+                <span class="chip">SharePoint</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <div class="skill-title">Networking</div>
+              <div class="chips">
+                <span class="chip">TCP/IP</span>
+                <span class="chip">DNS</span>
+                <span class="chip">DHCP</span>
+                <span class="chip">VPN</span>
+                <span class="chip">GlobalProtect</span>
+                <span class="chip">Troubleshooting</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <div class="skill-title">Tools & Virtualization</div>
+              <div class="chips">
+                <span class="chip">ConnectWise Manage</span>
+                <span class="chip">ConnectWise Automate</span>
+                <span class="chip">ScreenConnect</span>
+                <span class="chip">ServiceNow</span>
+                <span class="chip">Remote Desktop</span>
+                <span class="chip">VDI</span>
+                <span class="chip">VMware</span>
+                <span class="chip">VirtualBox</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <div class="skill-title">Scripting & Data</div>
+              <div class="chips">
+                <span class="chip">PowerShell</span>
+                <span class="chip">Python Basic</span>
+                <span class="chip">CSV Automation</span>
+                <span class="chip">HTML Email</span>
+                <span class="chip">Excel</span>
+                <span class="chip">SQL Basic</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="side-card" id="certifications">
+            <h2>Certifications</h2>
+            <ul class="compact-list">
+              <li><strong>CompTIA A+</strong><br>2025</li>
+              <li><strong>Dell Certified Repair Technician</strong><br>2025</li>
+              <li><strong>Lenovo Certified Repair Technician</strong><br>2025</li>
+              <li><strong>CompTIA Network+</strong><br>In Progress</li>
+              <li><strong>CompTIA Security+</strong><br>Planned</li>
+            </ul>
+          </section>
+
+          <section class="side-card">
+            <h2>Key Positioning</h2>
+            <div class="callout">
+              Tier 2-capable support technician with hands-on identity administration, endpoint troubleshooting, remote access support, virtualization exposure, and practical automation experience.
+            </div>
+          </section>
+
+          <section class="side-card">
+            <h2>Key Achievements</h2>
+            <ul>
+              <li>Reduced password reset ticket volume by 50% in 3 months.</li>
+              <li>Maintained 90%+ First Call Resolution in high-volume support.</li>
+              <li>Built PowerShell tools for AD lookup, account workflows, and group management.</li>
+              <li>Automated user ID generation using an internal API and CSV output.</li>
+            </ul>
+          </section>
+
+          <section class="side-card">
+            <h2>Education</h2>
+            <ul class="compact-list">
+              <li><strong>High School Diploma</strong><br>Jackson Liberty High School</li>
+            </ul>
+          </section>
+        </aside>
+      </main>
+
+      <footer>
+        <span>Christopher Goodwin • IT Technical Support Specialist</span>
+        <span>Designed for web viewing, recruiter review, and interview follow-up.</span>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
